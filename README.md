@@ -19,5 +19,6 @@
 - [ ] Caching Data (Reservoir)
 - [ ] Persisting data (Room Database)
 - [ ] Event broadcasting (EventBus)
+- [ ] Binding Implementation (ButterKnife)
 - [ ] Multiple Screen size support
 - [ ] Product Flavour support
