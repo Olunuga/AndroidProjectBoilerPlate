@@ -6,21 +6,21 @@ import java.util.List;
  * Created by myorh on 06/09/2018.
  */
 
-public class EventGroup {
+public class SampleModelGroup {
 
     private String name;
     private String seemMore;
 
 
-    private List<Event> eventList;
+    private List<SampleModel> sampleModelList;
 
-    public EventGroup() {
+    public SampleModelGroup() {
     }
 
-    public EventGroup(String name, String seemMore, List<Event> eventList) {
+    public SampleModelGroup(String name, String seemMore, List<SampleModel> sampleModelList) {
         this.name = name;
         this.seemMore = seemMore;
-        this.eventList = eventList;
+        this.sampleModelList = sampleModelList;
     }
 
     public String getName() {
@@ -31,8 +31,8 @@ public class EventGroup {
         return seemMore;
     }
 
-    public List<Event> getEventList() {
-        return eventList;
+    public List<SampleModel> getSampleModelList() {
+        return sampleModelList;
     }
 
     public void setName(String name) {
@@ -43,7 +43,7 @@ public class EventGroup {
         this.seemMore = seemMore;
     }
 
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
+    public void setSampleModelList(List<SampleModel> sampleModelList) {
+        this.sampleModelList = sampleModelList;
     }
 }

@@ -1,4 +1,4 @@
-package com.finitebits.boilerPlate.Module.Explore.Domain;
+package com.finitebits.boilerPlate.Module.SampleModule.Domain;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.finitebits.boilerPlate.R;
-import com.finitebits.boilerPlate.Repository.Model.EventGroup;
+import com.finitebits.boilerPlate.Repository.Model.SampleModelGroup;
 
 import java.util.List;
 
@@ -20,8 +20,8 @@ import butterknife.BindView;
  * Created by myorh on 06/09/2018.
  */
 
-public class ExploreGroupAdapter  extends RecyclerView.Adapter<ExploreGroupAdapter.ExploreGroupViewHolder> {
-    private List<EventGroup> eventGroups;
+public class ReNameMeGroupedItemAdapter extends RecyclerView.Adapter<ReNameMeGroupedItemAdapter.ExploreGroupViewHolder> {
+    private List<SampleModelGroup> sampleModelGroups;
     private Context context;
 
 
@@ -38,14 +38,14 @@ public class ExploreGroupAdapter  extends RecyclerView.Adapter<ExploreGroupAdapt
         holder.fillItemAt(position);
     }
 
-    public void setData(List<EventGroup> eventGroups){
-        this.eventGroups = eventGroups;
+    public void setData(List<SampleModelGroup> sampleModelGroups){
+        this.sampleModelGroups = sampleModelGroups;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return eventGroups.size();
+        return sampleModelGroups.size();
     }
 
     class ExploreGroupViewHolder extends RecyclerView.ViewHolder{
@@ -55,7 +55,7 @@ public class ExploreGroupAdapter  extends RecyclerView.Adapter<ExploreGroupAdapt
         private TextView venue;
         //@BindView(R.id.rvEventItem)
         private RecyclerView recyclerView;
-        private ExploreEventItemAdapter adapter;
+        private ReNameMeItemAdapter adapter;
         private LinearLayoutManager layoutManager;
         //private ImageLoader imageLoader;
 
@@ -66,15 +66,15 @@ public class ExploreGroupAdapter  extends RecyclerView.Adapter<ExploreGroupAdapt
             recyclerView = itemView.findViewById(R.id.rvEventItem);
             name = itemView.findViewById(R.id.tvGroupName);
 
-            adapter = new ExploreEventItemAdapter();
+            adapter = new ReNameMeItemAdapter();
             layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(adapter);
         }
 
         void fillItemAt(int position){
-            adapter.setData(eventGroups.get(position).getEventList());
-            name.setText(eventGroups.get(position).getName());
+            adapter.setData(sampleModelGroups.get(position).getSampleModelList());
+            name.setText(sampleModelGroups.get(position).getName());
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.finitebits.boilerPlate.Networking;
+package com.finitebits.boilerPlate.Networking.ResponseModel;
 
 /**
  * Created by myorh on 08/09/2018.

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.finitebits.boilerPlate.Module.Explore.ExploreFragment;
+import com.finitebits.boilerPlate.Module.SampleModule.ReNameMeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.contentContainer,new ExploreFragment());
+        ft.replace(R.id.contentContainer,new ReNameMeFragment());
         ft.commit();
         //mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

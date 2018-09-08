@@ -1,5 +1,7 @@
 package com.finitebits.boilerPlate.Networking;
 
+import com.finitebits.boilerPlate.Networking.Service.SampleModelService;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -13,8 +15,8 @@ public class NetworkingManager {
             .baseUrl("https://www.jasonbase.com")
             .build();
 
-    public EventService getEventService(){
-       return retrofit.create(EventService.class);
+    public SampleModelService getSampleModelService(){
+       return retrofit.create(SampleModelService.class);
     }
 
 }

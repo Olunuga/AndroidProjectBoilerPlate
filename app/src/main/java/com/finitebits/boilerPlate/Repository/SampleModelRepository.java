@@ -3,9 +3,9 @@ package com.finitebits.boilerPlate.Repository;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
-import com.finitebits.boilerPlate.Networking.BaseResponse;
+import com.finitebits.boilerPlate.Networking.ResponseModel.BaseResponse;
 import com.finitebits.boilerPlate.Networking.NetworkingManager;
-import com.finitebits.boilerPlate.Repository.Model.Event;
+import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,38 +18,38 @@ import retrofit2.Response;
  * Created by myorh on 08/09/2018.
  */
 
-public class EventRepository {
-    private static EventRepository INSTANCE;
+public class SampleModelRepository {
+    private static SampleModelRepository INSTANCE;
     private NetworkingManager networkingManager;
 
 
-    private EventRepository() {
+    private SampleModelRepository() {
         //To prevent initialization of this class
     }
 
 
     //TODO: make use of dependency injection here
-    public static EventRepository getINSTANCE() {
+    public static SampleModelRepository getINSTANCE() {
         if (INSTANCE == null) {
-            INSTANCE = new EventRepository();
+            INSTANCE = new SampleModelRepository();
         }
 
         return INSTANCE;
     }
 
 
-    public LiveData<List<Event>> getEvents() {
-        final MutableLiveData<List<Event>> eventList = new MutableLiveData<>();
-        new NetworkingManager().getEventService().getEvents().enqueue(new Callback<BaseResponse<List<Event>>>() {
+    public LiveData<List<SampleModel>> getEvents() {
+        final MutableLiveData<List<SampleModel>> eventList = new MutableLiveData<>();
+        new NetworkingManager().getSampleModelService().getSampleModelList().enqueue(new Callback<BaseResponse<List<SampleModel>>>() {
             @Override
-            public void onResponse(Call<BaseResponse<List<Event>>> call, Response<BaseResponse<List<Event>>> response) {
+            public void onResponse(Call<BaseResponse<List<SampleModel>>> call, Response<BaseResponse<List<SampleModel>>> response) {
                 if(Objects.equals(response.body().getStatus(), "Success")){
                     eventList.setValue(response.body().data);// use data
                 }
             }
 
             @Override
-            public void onFailure(Call<BaseResponse<List<Event>>> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<SampleModel>>> call, Throwable t) {
 
             }
         });

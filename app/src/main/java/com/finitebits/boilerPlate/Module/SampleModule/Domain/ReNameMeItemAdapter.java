@@ -1,4 +1,4 @@
-package com.finitebits.boilerPlate.Module.Explore.Domain;
+package com.finitebits.boilerPlate.Module.SampleModule.Domain;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.finitebits.boilerPlate.R;
-import com.finitebits.boilerPlate.Repository.Model.Event;
+import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 
 import java.util.List;
 
@@ -19,9 +19,9 @@ import butterknife.BindView;
  * Created by myorh on 06/09/2018.
  */
 
-public class ExploreEventItemAdapter  extends RecyclerView.Adapter<ExploreEventItemAdapter.ExploreEventItemViewHolder> {
+public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapter.ExploreEventItemViewHolder> {
 
-    private List<Event> eventList;
+    private List<SampleModel> sampleModelList;
 
 
     @NonNull
@@ -36,14 +36,14 @@ public class ExploreEventItemAdapter  extends RecyclerView.Adapter<ExploreEventI
       holder.fillItemAt(position);
     }
 
-    public void setData(List<Event> events){
-        this.eventList = events;
+    public void setData(List<SampleModel> sampleModels){
+        this.sampleModelList = sampleModels;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return eventList.size();
+        return sampleModelList.size();
     }
 
     class ExploreEventItemViewHolder extends RecyclerView.ViewHolder{
@@ -64,7 +64,7 @@ public class ExploreEventItemAdapter  extends RecyclerView.Adapter<ExploreEventI
         }
 
         void fillItemAt(int position){
-           name.setText(eventList.get(position).getName());
+           name.setText(sampleModelList.get(position).getName());
         }
     }
 }

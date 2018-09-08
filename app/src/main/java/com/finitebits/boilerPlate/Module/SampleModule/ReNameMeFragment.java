@@ -1,4 +1,4 @@
-package com.finitebits.boilerPlate.Module.Explore;
+package com.finitebits.boilerPlate.Module.SampleModule;
 
 
 import android.arch.lifecycle.Observer;
@@ -14,10 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.finitebits.boilerPlate.Module.Explore.Domain.ExploreGroupAdapter;
+import com.finitebits.boilerPlate.Module.SampleModule.Domain.ReNameMeGroupedItemAdapter;
 import com.finitebits.boilerPlate.R;
-import com.finitebits.boilerPlate.Repository.Model.Event;
-import com.finitebits.boilerPlate.Repository.Model.EventGroup;
+import com.finitebits.boilerPlate.Repository.Model.SampleModel;
+import com.finitebits.boilerPlate.Repository.Model.SampleModelGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,18 +25,18 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExploreFragment extends Fragment {
+public class ReNameMeFragment extends Fragment {
     //@BindView(R.id.rvExplore)
     RecyclerView recyclerView;
 
     private LinearLayoutManager linearLayoutManager;
-    private ExploreGroupAdapter adapter;
-    private EventViewModel viewModel;
+    private ReNameMeGroupedItemAdapter adapter;
+    private RenameMeViewModel viewModel;
 
-    public ExploreFragment() {
+    public ReNameMeFragment() {
         // Required empty public constructor
         linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        adapter = new ExploreGroupAdapter();
+        adapter = new ReNameMeGroupedItemAdapter();
     }
 
     @Override
@@ -50,12 +50,12 @@ public class ExploreFragment extends Fragment {
     }
 
     private void setUpViewModel() {
-        viewModel = ViewModelProviders.of(this).get(EventViewModel.class);
-        viewModel.getEvents().observe(this, new Observer<List<Event>>() {
+        viewModel = ViewModelProviders.of(this).get(RenameMeViewModel.class);
+        viewModel.getEvents().observe(this, new Observer<List<SampleModel>>() {
             @Override
-            public void onChanged(@Nullable List<Event> events) {
-                // adapter.setData(events);
-                Log.d("Name",events.toString());
+            public void onChanged(@Nullable List<SampleModel> sampleModels) {
+                // adapter.setData(sampleModels);
+                Log.d("Name", sampleModels.toString());
                 // TODO: update adapter here.
             }
         });
@@ -63,7 +63,7 @@ public class ExploreFragment extends Fragment {
 
     private void setUpRecyclerView(View view) {
         recyclerView = view.findViewById(R.id.rvExplore);
-        adapter.setData(new ArrayList<EventGroup>());
+        adapter.setData(new ArrayList<SampleModelGroup>());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
     }

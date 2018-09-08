@@ -6,25 +6,25 @@ import com.google.gson.annotations.SerializedName;
  * Created by myorh on 06/09/2018.
  */
 
-public class Event {
+public class SampleModel {
 
     private String name;
     private String venue;
-
     private String date;
 
     @SerializedName("image_url")
     private String imageUrl;
+
     private String description;
     private int price;
     private int totalAttendee;
 
-    public Event(){
+    public SampleModel(){
         this.price = 0;
     }
 
 
-    public Event(String name, String venue, String date, String imageUrl, String description, int price, int totalAttendee) {
+    public SampleModel(String name, String venue, String date, String imageUrl, String description, int price, int totalAttendee) {
         this.name = name;
         this.venue = venue;
         this.date = date;
