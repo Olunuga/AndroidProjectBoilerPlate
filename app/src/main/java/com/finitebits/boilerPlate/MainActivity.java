@@ -1,4 +1,4 @@
-package com.finitebits.tracker;
+package com.finitebits.boilerPlate;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.finitebits.tracker.Module.Explore.ExploreFragment;
+import com.finitebits.boilerPlate.Module.Explore.ExploreFragment;
 
 public class MainActivity extends AppCompatActivity {
 

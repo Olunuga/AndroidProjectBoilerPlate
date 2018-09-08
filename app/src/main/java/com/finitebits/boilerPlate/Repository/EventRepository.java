@@ -1,12 +1,11 @@
-package com.finitebits.tracker.Repository;
+package com.finitebits.boilerPlate.Repository;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.support.annotation.NonNull;
 
-import com.finitebits.tracker.Networking.BaseResponse;
-import com.finitebits.tracker.Networking.NetworkingManager;
-import com.finitebits.tracker.Repository.Model.Event;
+import com.finitebits.boilerPlate.Networking.BaseResponse;
+import com.finitebits.boilerPlate.Networking.NetworkingManager;
+import com.finitebits.boilerPlate.Repository.Model.Event;
 
 import java.util.List;
 import java.util.Objects;

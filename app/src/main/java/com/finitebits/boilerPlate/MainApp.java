@@ -1,9 +1,8 @@
-package com.finitebits.tracker;
+package com.finitebits.boilerPlate;
 
 import android.app.Application;
 
-import com.finitebits.tracker.ThirdParty.ImageLoader;
-import com.finitebits.tracker.Networking.NetworkingManager;
+import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
 
 /**
  * Created by myorh on 08/09/2018.

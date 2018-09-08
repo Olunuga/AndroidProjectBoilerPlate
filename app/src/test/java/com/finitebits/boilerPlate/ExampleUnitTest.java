@@ -1,4 +1,4 @@
-package com.finitebits.tracker;
+package com.finitebits.boilerPlate;
 
 import org.junit.Test;
 

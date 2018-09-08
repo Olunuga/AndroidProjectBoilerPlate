@@ -1,4 +1,4 @@
-package com.finitebits.tracker.Networking;
+package com.finitebits.boilerPlate.Networking;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

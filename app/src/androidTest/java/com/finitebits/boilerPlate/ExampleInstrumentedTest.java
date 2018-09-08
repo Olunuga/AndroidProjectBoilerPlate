@@ -1,4 +1,4 @@
-package com.finitebits.tracker;
+package com.finitebits.boilerPlate;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.finitebits.tracker", appContext.getPackageName());
+        assertEquals("com.finitebits.boilerPlate", appContext.getPackageName());
     }
 }

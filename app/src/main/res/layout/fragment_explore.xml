@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
-    tools:context="com.finitebits.tracker.Module.Explore.ExploreFragment">
+    tools:context="com.finitebits.boilerPlate.Module.Explore.ExploreFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvExplore"

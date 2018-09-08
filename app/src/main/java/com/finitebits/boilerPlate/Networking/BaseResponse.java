@@ -1,4 +1,4 @@
-package com.finitebits.tracker.Networking;
+package com.finitebits.boilerPlate.Networking;
 
 /**
  * Created by myorh on 08/09/2018.

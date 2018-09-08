@@ -1,6 +1,4 @@
-package com.finitebits.tracker.Repository.Model;
-
-import com.google.gson.annotations.SerializedName;
+package com.finitebits.boilerPlate.Repository.Model;
 
 import java.util.List;
 

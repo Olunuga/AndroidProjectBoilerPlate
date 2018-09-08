@@ -1,4 +1,4 @@
-package com.finitebits.tracker.Module.Explore.Domain;
+package com.finitebits.boilerPlate.Module.Explore.Domain;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.finitebits.tracker.R;
-import com.finitebits.tracker.Repository.Model.EventGroup;
+import com.finitebits.boilerPlate.R;
+import com.finitebits.boilerPlate.Repository.Model.EventGroup;
 
 import java.util.List;
 

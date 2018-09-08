@@ -1,4 +1,4 @@
-package com.finitebits.tracker.ThirdParty;
+package com.finitebits.boilerPlate.ThirdParty;
 
 import android.widget.ImageView;
 

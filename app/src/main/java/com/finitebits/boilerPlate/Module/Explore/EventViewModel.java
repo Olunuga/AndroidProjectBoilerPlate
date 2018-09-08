@@ -1,10 +1,10 @@
-package com.finitebits.tracker.Module.Explore;
+package com.finitebits.boilerPlate.Module.Explore;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.finitebits.tracker.Repository.Model.Event;
-import com.finitebits.tracker.Repository.EventRepository;
+import com.finitebits.boilerPlate.Repository.Model.Event;
+import com.finitebits.boilerPlate.Repository.EventRepository;
 
 import java.util.List;
 

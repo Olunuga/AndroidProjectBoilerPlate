@@ -1,9 +1,7 @@
-package com.finitebits.tracker.Module.Explore;
+package com.finitebits.boilerPlate.Module.Explore;
 
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,10 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.finitebits.tracker.Module.Explore.Domain.ExploreGroupAdapter;
-import com.finitebits.tracker.R;
-import com.finitebits.tracker.Repository.Model.Event;
-import com.finitebits.tracker.Repository.Model.EventGroup;
+import com.finitebits.boilerPlate.Module.Explore.Domain.ExploreGroupAdapter;
+import com.finitebits.boilerPlate.R;
+import com.finitebits.boilerPlate.Repository.Model.Event;
+import com.finitebits.boilerPlate.Repository.Model.EventGroup;
 
 import java.util.ArrayList;
 import java.util.List;

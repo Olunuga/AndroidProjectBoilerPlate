@@ -1,6 +1,6 @@
-package com.finitebits.tracker.Networking;
+package com.finitebits.boilerPlate.Networking;
 
-import com.finitebits.tracker.Repository.Model.Event;
+import com.finitebits.boilerPlate.Repository.Model.Event;
 
 import java.util.List;
 
