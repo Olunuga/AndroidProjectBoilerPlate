@@ -2,7 +2,7 @@
 
 - **Clone Repository** git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
 
-- **Set remote url to your own git repo** git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
+- **Set your git remote** git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
 
 - **Rebase to master branch** git pull —rebase origin mater
 
