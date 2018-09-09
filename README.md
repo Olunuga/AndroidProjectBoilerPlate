@@ -12,7 +12,7 @@ git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
 
 - **Rebase to master branch** 
 ```
-git pull —rebase origin mater
+git pull —rebase origin master
 ```
 
 - **Rename files and folders and Start using**
