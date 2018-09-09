@@ -31,3 +31,4 @@ git pull —rebase origin mater
 - [ ] Binding Implementation (ButterKnife)
 - [ ] Multiple Screen size support
 - [ ] Product Flavour support
+- [ ] Test cases
