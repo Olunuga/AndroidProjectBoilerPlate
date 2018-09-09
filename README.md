@@ -1,16 +1,16 @@
-##How to use
+## How to use
 
-- **Clone Repository** git clone url/to/git
+- **Clone Repository** git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
 
-- **set remote url to your own git repo** git remote set-url "url/to/git"
+- **set remote url to your own git repo** git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
 
-- **Rebase the master branch** git pull —rebase origin mater
+- **Rebase to master branch** git pull —rebase origin mater
 
-- **Rename files and Start using**
+- **Rename files and folders and Start using**
 
 
 
-##Features
+## Features
 - [x] Project folder organization
 - [X] Network call (Retrofit)
 - [x] Nested RecyclerView data
