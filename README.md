@@ -5,9 +5,15 @@
 git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
 ```
 
-- **Set your git remote** git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
+- **Set your git remote** 
+```
+git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
+```
 
-- **Rebase to master branch** git pull —rebase origin mater
+- **Rebase to master branch** 
+```
+git pull —rebase origin mater
+```
 
 - **Rename files and folders and Start using**
 
