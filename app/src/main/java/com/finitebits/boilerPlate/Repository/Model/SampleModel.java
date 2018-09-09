@@ -9,6 +9,7 @@ import com.google.gson.annotations.SerializedName;
 public class SampleModel {
 
     /*
+    link to json generator http://www.objgen.com/json/models/pLd4
     Sample Response data
     {
   "status": "success",
