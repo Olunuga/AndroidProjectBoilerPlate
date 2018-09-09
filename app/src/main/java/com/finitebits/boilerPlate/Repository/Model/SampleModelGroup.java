@@ -10,8 +10,6 @@ public class SampleModelGroup {
 
     private String name;
     private String seemMore;
-
-
     private List<SampleModel> sampleModelList;
 
     public SampleModelGroup() {

@@ -8,6 +8,55 @@ import com.google.gson.annotations.SerializedName;
 
 public class SampleModel {
 
+    /*
+    Sample Response data
+    {
+  "status": "success",
+  "data": [
+    {
+      "name": "event1",
+      "venue": "Just the description",
+      "image_url": "oneimage.com/image.png",
+      "description": "one party like that",
+      "price": 200,
+      "total_attendee": "300",
+      "total_registered": 40,
+      "date": "12-12-1108"
+    },
+    {
+      "name": "event1",
+      "venue": "Just the description",
+      "image_url": "oneimage.com/image.png",
+      "description": "one party like that",
+      "price": 200,
+      "total_attendee": "300",
+      "total_registered": 40,
+      "date": "12-12-1108"
+    },
+    {
+      "name": "event1",
+      "venue": "Just the description",
+      "image_url": "oneimage.com/image.png",
+      "description": "one party like that",
+      "price": 200,
+      "total_attendee": "300",
+      "total_registered": 40,
+      "date": "12-12-1108"
+    },
+    {
+      "name": "event1",
+      "venue": "Just the description",
+      "image_url": "oneimage.com/image.png",
+      "description": "one party like that",
+      "price": 200,
+      "total_attendee": "300",
+      "total_registered": 40,
+      "date": "12-12-1108"
+    }
+  ]
+}
+  */
+
     private String name;
     private String venue;
     private String date;
