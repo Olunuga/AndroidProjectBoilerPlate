@@ -1,6 +1,9 @@
 ## How to use
 
-- **Clone Repository** git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
+- **Clone Repository** 
+```
+git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
+```
 
 - **Set your git remote** git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
 
