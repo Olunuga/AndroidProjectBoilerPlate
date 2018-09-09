@@ -2,6 +2,7 @@ package com.finitebits.boilerPlate.Repository;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.support.annotation.NonNull;
 
 import com.finitebits.boilerPlate.Networking.ResponseModel.BaseResponse;
 import com.finitebits.boilerPlate.Networking.NetworkingManager;
@@ -39,12 +40,12 @@ public class SampleModelRepository {
 
 
     public LiveData<List<SampleModel>> getEvents() {
-        final MutableLiveData<List<SampleModel>> eventList = new MutableLiveData<>();
+        final MutableLiveData<List<SampleModel>> sampleModelList = new MutableLiveData<>();
         new NetworkingManager().getSampleModelService().getSampleModelList().enqueue(new Callback<BaseResponse<List<SampleModel>>>() {
             @Override
-            public void onResponse(Call<BaseResponse<List<SampleModel>>> call, Response<BaseResponse<List<SampleModel>>> response) {
+            public void onResponse(@NonNull Call<BaseResponse<List<SampleModel>>> call, @NonNull Response<BaseResponse<List<SampleModel>>> response) {
                 if(Objects.equals(response.body().getStatus(), "Success")){
-                    eventList.setValue(response.body().data);// use data
+                    sampleModelList.setValue(response.body().data);// use data
                 }
             }
 
@@ -53,7 +54,7 @@ public class SampleModelRepository {
 
             }
         });
-       return eventList;
+       return sampleModelList;
     }
 
 }
