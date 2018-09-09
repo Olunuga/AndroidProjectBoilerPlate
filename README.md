@@ -19,7 +19,7 @@ git pull —rebase origin mater
 
 
 
-## Features
+## Included
 - [x] Project folder organization
 - [X] Network call (Retrofit)
 - [x] Nested RecyclerView data
