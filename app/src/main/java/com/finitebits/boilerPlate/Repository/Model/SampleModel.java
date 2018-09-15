@@ -10,6 +10,7 @@ public class SampleModel {
 
     /*
     link to json generator http://www.objgen.com/json/models/pLd4
+    https://www.jasonbase.com/things/wgqA/edit
     Sample Response data
   {
   "status": "success",
