@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import com.finitebits.boilerPlate.Networking.ResponseModel.BaseResponse;
 import com.finitebits.boilerPlate.Networking.NetworkingManager;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
+import com.finitebits.boilerPlate.Repository.Model.SampleModelGroup;
 
 import java.util.List;
 import java.util.Objects;
@@ -32,22 +33,23 @@ public class SampleModelRepository {
         this.networkingManager  = networkingManager;
     }
 
-    public LiveData<List<SampleModel>> getEvents() {
-        final MutableLiveData<List<SampleModel>> sampleModelList = new MutableLiveData<>();
-        networkingManager.getSampleModelService().getSampleModelList().enqueue(new Callback<BaseResponse<List<SampleModel>>>() {
+    public LiveData<List<SampleModelGroup>> getEvents() {
+        final MutableLiveData<List<SampleModelGroup>> sampleModelGroupedList = new MutableLiveData<>();
+
+        networkingManager.getSampleModelService().getSampleModelGroupedList().enqueue(new Callback<BaseResponse<List<SampleModelGroup>>>() {
             @Override
-            public void onResponse(@NonNull Call<BaseResponse<List<SampleModel>>> call, @NonNull Response<BaseResponse<List<SampleModel>>> response) {
-                if(Objects.equals(response.body().getStatus(), "Success")){
-                    sampleModelList.setValue(response.body().data);// use data
+            public void onResponse(@NonNull Call<BaseResponse<List<SampleModelGroup>>> call, @NonNull Response<BaseResponse<List<SampleModelGroup>>> response) {
+                if(response.body().getStatus().equalsIgnoreCase("success")){
+                    sampleModelGroupedList.setValue(response.body().data);// use data
                 }
             }
 
             @Override
-            public void onFailure(Call<BaseResponse<List<SampleModel>>> call, Throwable t) {
+            public void onFailure(Call<BaseResponse<List<SampleModelGroup>>> call, Throwable t) {
 
             }
         });
-       return sampleModelList;
+       return sampleModelGroupedList;
     }
 
 }

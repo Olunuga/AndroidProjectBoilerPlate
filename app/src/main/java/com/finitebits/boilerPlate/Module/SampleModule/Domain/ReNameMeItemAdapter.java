@@ -12,6 +12,7 @@ import com.finitebits.boilerPlate.MainApp;
 import com.finitebits.boilerPlate.R;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
     }
 
     class ExploreEventItemViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.imgViewEventImage)
+        //@BindView(R.id.imgViewEventImage)
         private ImageView image;
         @BindView(R.id.tvEventName)
         private TextView name;
@@ -63,12 +64,15 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
             super(itemView);
             //ButterKnife.bind(itemView);
             loader = MainApp.getComponent().getImageLoader();
+            image = itemView.findViewById(R.id.imgViewEventImage);
             name = itemView.findViewById(R.id.tvEventName);
 
         }
 
         void fillItemAt(int position){
-           name.setText(sampleModelList.get(position).getName());
+            String imageUrl = sampleModelList.get(position).getImageUrl();
+            name.setText(sampleModelList.get(position).getName());
+            loader.LoadImageFromString(imageUrl,image);
         }
     }
 }
