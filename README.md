@@ -31,5 +31,6 @@ git pull —rebase origin master
 - [ ] Event broadcasting (EventBus)
 - [ ] Binding Implementation (ButterKnife)
 - [ ] Multiple Screen size support
-- [ ] Product Flavour support
+- [ ] Product Flavour configuration
+- [X] Build configuration
 - [ ] Test cases
