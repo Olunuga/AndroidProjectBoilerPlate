@@ -32,5 +32,5 @@ git pull —rebase origin master
 - [ ] Binding Implementation (ButterKnife)
 - [ ] Multiple Screen size support
 - [ ] Product Flavour configuration
-- [X] Build configuration
+- [ ] Build configuration
 - [ ] Test cases
