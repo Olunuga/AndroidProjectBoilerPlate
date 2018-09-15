@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.finitebits.boilerPlate.MainApp;
 import com.finitebits.boilerPlate.R;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
+import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
 
 import java.util.List;
 
@@ -22,6 +24,7 @@ import butterknife.BindView;
 public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapter.ExploreEventItemViewHolder> {
 
     private List<SampleModel> sampleModelList;
+    private ImageLoader loader;
 
 
     @NonNull
@@ -59,6 +62,7 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
         ExploreEventItemViewHolder(View itemView) {
             super(itemView);
             //ButterKnife.bind(itemView);
+            loader = MainApp.getComponent().getImageLoader();
             name = itemView.findViewById(R.id.tvEventName);
 
         }

@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.finitebits.boilerPlate.MainApp;
 import com.finitebits.boilerPlate.Module.SampleModule.Domain.ReNameMeGroupedItemAdapter;
 import com.finitebits.boilerPlate.R;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
@@ -34,7 +35,6 @@ public class ReNameMeFragment extends Fragment {
     private RenameMeViewModel viewModel;
 
     public ReNameMeFragment() {
-        // Required empty public constructor
         linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         adapter = new ReNameMeGroupedItemAdapter();
     }
@@ -51,12 +51,16 @@ public class ReNameMeFragment extends Fragment {
 
     private void setUpViewModel() {
         viewModel = ViewModelProviders.of(this).get(RenameMeViewModel.class);
+
+        //Injecting into Component.
+        MainApp.getComponent().injectSampleViewModel(viewModel);
         viewModel.getEvents().observe(this, new Observer<List<SampleModel>>() {
             @Override
             public void onChanged(@Nullable List<SampleModel> sampleModels) {
+
                 // adapter.setData(sampleModels);
                 Log.d("Name", sampleModels.toString());
-                // TODO: update adapter here.
+                // TODO: use data.
             }
         });
     }

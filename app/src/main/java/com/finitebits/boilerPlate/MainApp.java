@@ -2,6 +2,11 @@ package com.finitebits.boilerPlate;
 
 import android.app.Application;
 
+import com.finitebits.boilerPlate.DI.ApplicationComponent;
+import com.finitebits.boilerPlate.DI.DaggerApplicationComponent;
+import com.finitebits.boilerPlate.DI.DiModule.ApplicationModule;
+import com.finitebits.boilerPlate.DI.DiModule.UtilsModule;
+import com.finitebits.boilerPlate.DI.DiModule.ViewModelModule;
 import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
 
 /**
@@ -9,20 +14,23 @@ import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
  */
 
 public class MainApp extends Application {
-    private static MainApp INSTANCE;
+    protected static ApplicationComponent applicationComponent;
+    public static ApplicationComponent getComponent(){
+        return applicationComponent;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        INSTANCE = this;
+        applicationComponent = buildComponent();
     }
 
-    public static MainApp getInstance(){
-        return INSTANCE;
+    private ApplicationComponent buildComponent(){
+        return applicationComponent = DaggerApplicationComponent
+                .builder()
+                .applicationModule(new ApplicationModule(this))
+                .viewModelModule(new ViewModelModule())
+                .utilsModule(new UtilsModule())
+                .build();
     }
-
-    public ImageLoader getImageLoader(){
-        return ImageLoader.getINSTANCE();
-    }
-
 }
