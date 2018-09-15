@@ -54,12 +54,12 @@ public class ReNameMeFragment extends Fragment {
 
         //Injecting into Component.
         MainApp.getComponent().injectSampleViewModel(viewModel);
-        viewModel.getEvents().observe(this, new Observer<List<SampleModel>>() {
+        viewModel.getEvents().observe(this, new Observer<List<SampleModelGroup>>() {
             @Override
-            public void onChanged(@Nullable List<SampleModel> sampleModels) {
+            public void onChanged(@Nullable List<SampleModelGroup> sampleModelGrouped) {
 
                 // adapter.setData(sampleModels);
-                Log.d("Name", sampleModels.toString());
+                adapter.setData(sampleModelGrouped);
                 // TODO: use data.
             }
         });

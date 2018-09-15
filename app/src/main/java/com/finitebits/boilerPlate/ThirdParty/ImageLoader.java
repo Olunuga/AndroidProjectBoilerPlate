@@ -17,7 +17,7 @@ import javax.inject.Singleton;
 public class ImageLoader {
 
    public void LoadImageFromString(String imageSource,ImageView view){
-       Picasso.get().load("file:///android_asset/DvpvklR.png").into(view);
+       Picasso.get().load(imageSource).into(view);
    }
 
     public void LoadImageFromFile(File file, ImageView imageView){

@@ -3,6 +3,7 @@ package com.finitebits.boilerPlate.Module.SampleModule;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
+import com.finitebits.boilerPlate.Repository.Model.SampleModelGroup;
 import com.finitebits.boilerPlate.Repository.SampleModelRepository;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class RenameMeViewModel extends ViewModel {
         super();
     }
 
-    LiveData<List<SampleModel>> getEvents(){
+    LiveData<List<SampleModelGroup>> getEvents(){
         return sampleModelRepository.getEvents();
     }
 

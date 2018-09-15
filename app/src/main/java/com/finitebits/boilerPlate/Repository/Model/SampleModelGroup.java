@@ -1,5 +1,7 @@
 package com.finitebits.boilerPlate.Repository.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -10,6 +12,8 @@ public class SampleModelGroup {
 
     private String name;
     private String seemMore;
+
+    @SerializedName("data")
     private List<SampleModel> sampleModelList;
 
     public SampleModelGroup() {
