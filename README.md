@@ -25,6 +25,7 @@ git pull —rebase origin master
 - [x] Nested RecyclerView data
 - [x] Pluggable Image loader (Picasso)
 - [x] MVVM architecture (Android architecture component)
+- [X] Dependency Injection (Dagger 2)
 - [ ] Caching Data (Reservoir)
 - [ ] Persisting data (Room Database)
 - [ ] Event broadcasting (EventBus)
