@@ -6,19 +6,15 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
+import javax.inject.Singleton;
+
 /**
  * Created by myorh on 08/09/2018.
  */
 
-public class ImageLoader {
-    private static ImageLoader INSTANCE;
 
-    public static ImageLoader getINSTANCE(){
-        if(INSTANCE == null){
-            INSTANCE = new ImageLoader();
-        }
-        return INSTANCE;
-    }
+@Singleton
+public class ImageLoader {
 
    public void LoadImageFromString(String imageSource,ImageView view){
        Picasso.get().load("file:///android_asset/DvpvklR.png").into(view);

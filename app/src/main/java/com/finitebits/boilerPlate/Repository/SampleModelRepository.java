@@ -11,6 +11,9 @@ import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 import java.util.List;
 import java.util.Objects;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,29 +22,19 @@ import retrofit2.Response;
  * Created by myorh on 08/09/2018.
  */
 
+
+@Singleton
 public class SampleModelRepository {
-    private static SampleModelRepository INSTANCE;
     private NetworkingManager networkingManager;
 
-
-    private SampleModelRepository() {
-        //To prevent initialization of this class
+    @Inject
+    public SampleModelRepository(NetworkingManager networkingManager){
+        this.networkingManager  = networkingManager;
     }
-
-
-    //TODO: make use of dependency injection here
-    public static SampleModelRepository getINSTANCE() {
-        if (INSTANCE == null) {
-            INSTANCE = new SampleModelRepository();
-        }
-
-        return INSTANCE;
-    }
-
 
     public LiveData<List<SampleModel>> getEvents() {
         final MutableLiveData<List<SampleModel>> sampleModelList = new MutableLiveData<>();
-        new NetworkingManager().getSampleModelService().getSampleModelList().enqueue(new Callback<BaseResponse<List<SampleModel>>>() {
+        networkingManager.getSampleModelService().getSampleModelList().enqueue(new Callback<BaseResponse<List<SampleModel>>>() {
             @Override
             public void onResponse(@NonNull Call<BaseResponse<List<SampleModel>>> call, @NonNull Response<BaseResponse<List<SampleModel>>> response) {
                 if(Objects.equals(response.body().getStatus(), "Success")){
