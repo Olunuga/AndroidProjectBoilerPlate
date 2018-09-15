@@ -26,6 +26,9 @@ git pull —rebase origin master
 - [x] Pluggable Image loader (Picasso)
 - [x] MVVM architecture (Android architecture component)
 - [X] Dependency Injection (Dagger 2)
+- [ ] Fresh data loader
+- [ ] Pull to refresh loader 
+- [ ] Paged data loader 
 - [ ] Caching Data (Reservoir)
 - [ ] Persisting data (Room Database)
 - [ ] Event broadcasting (EventBus)
