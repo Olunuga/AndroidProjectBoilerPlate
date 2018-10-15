@@ -7,7 +7,7 @@ git clone https://github.com/Olunuga/AndroidProjectBoilerPlate.git
 
 - **Set your git remote** 
 ```
-git remote set-url https://yourRepositoryUrl.com/path/to/repo.git
+git remote set-url yourRemoteName https://yourRepositoryUrl.com/path/to/repo.git
 ```
 
 - **Rebase to master branch** 
@@ -31,7 +31,7 @@ git pull —rebase origin master
 - [ ] Paged data loader 
 - [ ] Caching Data (Reservoir)
 - [ ] Persisting data (Room Database)
-- [ ] Event broadcasting (EventBus)
+- [x] Event broadcasting (EventBus)
 - [ ] Binding Implementation (ButterKnife)
 - [ ] Multiple Screen size support
 - [ ] Product Flavour configuration
