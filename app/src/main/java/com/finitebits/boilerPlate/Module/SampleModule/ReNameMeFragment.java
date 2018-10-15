@@ -13,12 +13,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.finitebits.boilerPlate.EventBusEvents.SampleEventAction;
 import com.finitebits.boilerPlate.MainApp;
 import com.finitebits.boilerPlate.Module.SampleModule.Domain.ReNameMeGroupedItemAdapter;
 import com.finitebits.boilerPlate.R;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 import com.finitebits.boilerPlate.Repository.Model.SampleModelGroup;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,9 +64,9 @@ public class ReNameMeFragment extends Fragment {
             @Override
             public void onChanged(@Nullable List<SampleModelGroup> sampleModelGrouped) {
 
-                // adapter.setData(sampleModels);
-                adapter.setData(sampleModelGrouped);
                 // TODO: use data.
+                adapter.setData(sampleModelGrouped);
+
             }
         });
     }
@@ -70,5 +76,23 @@ public class ReNameMeFragment extends Fragment {
         adapter.setData(new ArrayList<SampleModelGroup>());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(SampleEventAction event) {
+        Toast.makeText(getContext(), "Event passed with param "+ event.getParameter(), Toast.LENGTH_SHORT).show();
+    };
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 }

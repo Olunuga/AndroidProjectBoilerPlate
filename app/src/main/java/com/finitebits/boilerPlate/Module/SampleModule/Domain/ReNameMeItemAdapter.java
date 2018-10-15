@@ -6,13 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.finitebits.boilerPlate.EventBusEvents.SampleEventAction;
 import com.finitebits.boilerPlate.MainApp;
 import com.finitebits.boilerPlate.R;
 import com.finitebits.boilerPlate.Repository.Model.SampleModel;
 import com.finitebits.boilerPlate.ThirdParty.ImageLoader;
 import com.squareup.picasso.Picasso;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -55,6 +59,8 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
         private ImageView image;
         @BindView(R.id.tvEventName)
         private TextView name;
+        private LinearLayout eventFrame;
+
         @BindView(R.id.tvEventVenue)
         private TextView venue;
         @BindView(R.id.tvEventDate)
@@ -66,6 +72,7 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
             loader = MainApp.getComponent().getImageLoader();
             image = itemView.findViewById(R.id.imgViewEventImage);
             name = itemView.findViewById(R.id.tvEventName);
+            eventFrame = itemView.findViewById(R.id.eventFrame);
 
         }
 
@@ -73,6 +80,13 @@ public class ReNameMeItemAdapter extends RecyclerView.Adapter<ReNameMeItemAdapte
             String imageUrl = sampleModelList.get(position).getImageUrl();
             name.setText(sampleModelList.get(position).getName());
             loader.LoadImageFromString(imageUrl,image);
+
+            eventFrame.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EventBus.getDefault().post(new SampleEventAction(0));
+                }
+            });
         }
     }
 }
